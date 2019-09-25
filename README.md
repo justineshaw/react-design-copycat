@@ -6,43 +6,33 @@ By [Justin Shaw](mailto:easyworkemail@gmail.com)
 
 ## Instructions
 
-1. Navigate to [repo](https://github.com/justineshaw/notes-app)
+1. Navigate to [repo](https://github.com/justineshaw/react-design-copycat)
 2. Clone locally using
-   `git clone https://github.com/justineshaw/notes-app.git`
-3. Install dependencies by using `npm install` in both the `client` and `backend` directories
-4. Run tests using `jest` in `backend` directory
-5. Start app front-end using `npm start` in `client` directory
-6. Start the server using `npm start` in `backend` directory
-7. Navigate to app in [browser](http://localhost:3000/)
-8. Have fun!
+   `git clone https://github.com/justineshaw/react-design-copycat`
+3. Install dependencies by using `npm install`
+4. Start app using `npm start`
+5. Navigate to app in [browser](http://localhost:3000/)
+6. Have fun!
 
 ## Discussion
 
-I used the following technologies: HTML, CSS, React, Axios, Jest, 
-Express, Express Validator and Lowdb.
+I used the following technologies and libraries: React, Material-UI, Axios, and React Alert.
 
 I used [create-react-app](https://github.com/facebook/create-react-app) 
 to generate the scaffolding for the app front-end.
 
-I used [express-generator](https://www.npmjs.com/package/express) 
-to generate the scaffolding for this server.
-
 ## Requirements Met
 
-#### Build a notes app to display a list of notes using a frontend framework, a service, and persistence.
+#### Use the images in the assets folder to design your react app exactly the same
 
-I used `React`, `Express`, and `Lowdb` to create an app that displays a list of notes that are persisted from a database. The app also offers immediate feedback to users so they know a new note was successfully added to the database.
+I used `React` and `Material-UI` to create an app that displays a login page and a drawer.
 
-#### Notes should be persisted and retrieved via a service, where the user can (1) add a note (2) edit a note and (3) access a note directly via a url.
+#### The form inside of your app should work and when the save button is pressed the data should be sent to the API
 
-I built an API that has `GET`, `POST`, and `PUT` endpoints so the `React` frontend can access endpoints exposed by the server and access particular data in the database.
+I used `Axios` to send a `POST` request of `Form Data` type to the C/+/T API to create a new user with `user_name`, `user_email`, `user_phone`, and `pairing` data.
 
-## Stretch Goals!
+## And Then Some!
 
-#### Include Input Validation
+#### Error Handling
 
-I used `Express Validator` to perform server-side Input Validation. For example, the user is prevented from entering an empty string/note. Also, if a user enters an invalid note index, they are notified.
-
-#### Include Unit Testing
-
-I used `Jest` to create 4 unit tests to ensure that an HTTP request to the API yields the expected response.
+I used [React Alert](https://www.npmjs.com/package/react-alert) to provide user feedback when submitting the form to create a user. For example, the user sees a success message if they successfully created a user. Similarly, the user sees an api-generated error message if user creation was unsuccessful.
