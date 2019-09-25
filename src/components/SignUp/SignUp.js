@@ -17,23 +17,26 @@ import { useAlert } from "react-alert";
 
 const useStyles = makeStyles(theme => ({
   container: {
-    padding: "0px"
+    padding: "0px",
   },
   paper: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "center"
   },
   bigAvatar: {
-    backgroundColor: theme.palette.secondary.main,
-    margin: 10,
     width: 100,
     height: 100,
     fontWeight: "bold",
+    border: '1px solid #FFF',
+    marginBottom: 15
+  },
+  bigAvatarContainer: {
+    maxWidth: "33% !important",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(3)
   },
   formFields: {
     paddingBottom: "20px",
@@ -104,12 +107,19 @@ const SignUp = (props) => {
       <Container component="main" maxWidth="xs" className={classes.container}>
         <CssBaseline />
         <div className={classes.paper}>
-          <Avatar
-            alt="C/+/T"
-            src="https://media.licdn.com/dms/image/C4D0BAQFuzFF1SGgRsg/company-logo_200_200/0?e=2159024400&v=beta&t=lYspJ49z6gfIjFyLobSIHlx4-mkvWcbTXNgKATw3p94"
-            className={classes.bigAvatar}
-          />
-          <AddPhotoAlternateIcon />
+          <Grid container spacing={3} alignItems="center">
+            <Grid item xs></Grid>
+            <Grid item xs={3} className={classes.bigAvatarContainer}>
+              <Avatar
+                alt="C/+/T"
+                src="https://media.licdn.com/dms/image/C4D0BAQFuzFF1SGgRsg/company-logo_200_200/0?e=2159024400&v=beta&t=lYspJ49z6gfIjFyLobSIHlx4-mkvWcbTXNgKATw3p94"
+                className={classes.bigAvatar}
+              />
+            </Grid>
+            <Grid item xs>
+              <AddPhotoAlternateIcon />
+            </Grid>
+          </Grid>
           <Typography component="h2" variant="h4">
             C/+/T
           </Typography>

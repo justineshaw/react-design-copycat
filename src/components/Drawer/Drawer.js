@@ -19,18 +19,28 @@ import PlaylistAddCheckIcon from "@material-ui/icons/PlaylistAddCheck";
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import Avatar from "@material-ui/core/Avatar";
+import Grid from "@material-ui/core/Grid";
+
 
 const Drawer = (props) => {
     const useStyles = makeStyles(theme => ({
+      root: {},
       card: {
         minWidth: 275,
-        maxWidth: 345
-      },
-      media: {
-        zIndex: -100,
-        height: 140,
+        maxWidth: 345,
+        color: "#fff",
+        borderRadius: 0,
         backgroundImage:
-          "https://media.licdn.com/dms/image/C4D0BAQFuzFF1SGgRsg/company-logo_200_200/0?e=2159024400&v=beta&t=lYspJ49z6gfIjFyLobSIHlx4-mkvWcbTXNgKATw3p94"
+          'url("https://media.licdn.com/dms/image/C4D0BAQFuzFF1SGgRsg/company-logo_200_200/0?e=2159024400&v=beta&t=lYspJ49z6gfIjFyLobSIHlx4-mkvWcbTXNgKATw3p94")'
+      },
+      cardGrid: {
+        marginLeft: 15
+      },
+      cardContent: {
+        alignSelf: "end",
+        textAlign: "center",
+        paddingBottom: 0,
+        paddingTop: 50
       },
       bullet: {
         display: "inline-block",
@@ -39,6 +49,12 @@ const Drawer = (props) => {
       },
       name: {
         fontWeight: "bold"
+      },
+      bigAvatar: {
+        border: "2px solid #FFF",
+        alignSelf: "end",
+        width: 75,
+        height: 75
       },
       inviteCount: {
         backgroundColor: theme.palette.primary.main,
@@ -57,42 +73,51 @@ const Drawer = (props) => {
         width: "auto"
       },
       expand: {
-        marginLeft: "auto"
+        marginLeft: "auto",
+        color: "#fff"
       }
     }));
     const classes = useStyles();
 
-    const sideList = side => (
+    const sideList = () => (
       <div
-        className={classes.list}
+        className={classes.root}
         role="presentation"
         onClick={props.drawerHandler}
         onKeyDown={props.drawerHandler}
       >
         <Card className={classes.card}>
-          <CardContent>
+          <CardContent className={classes.cardContent}>
             <Avatar
               alt="C/+/T"
               src="https://media.licdn.com/dms/image/C4D0BAQFuzFF1SGgRsg/company-logo_200_200/0?e=2159024400&v=beta&t=lYspJ49z6gfIjFyLobSIHlx4-mkvWcbTXNgKATw3p94"
               className={classes.bigAvatar}
             />
-            <Typography className={classes.name} component="p" variant="body2">
-              C/+/T
-            </Typography>
-            <Typography component="p" variant="body2">
-              Charleston, SC
-            </Typography>
           </CardContent>
           <CardActions>
+            <Grid container spacing={0} className={classes.cardGrid}>
+              <Grid item xs={12}>
+                <Typography
+                  className={classes.name}
+                  component="p"
+                  variant="body2"
+                >
+                  C/+/T
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography component="p" variant="body2">
+                  Charleston, SC
+                </Typography>
+              </Grid>
+            </Grid>
             <IconButton className={classes.expand}>
               <ArrowDropDownIcon />
             </IconButton>
           </CardActions>
         </Card>
 
-
-        <List component="nav" aria-label="main mailbox folders">
-          
+        <List component="nav" aria-label="main nav">
           <ListItem button className={classes.listItem}>
             <ListItemIcon>
               <AccountCircleIcon />

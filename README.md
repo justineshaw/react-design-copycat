@@ -21,6 +21,8 @@ I used the following technologies and libraries: React, Material-UI, Axios, and 
 I used [create-react-app](https://github.com/facebook/create-react-app) 
 to generate the scaffolding for the app front-end.
 
+I imported [play](https://fonts.google.com/specimen/Play) from Google Fonts.
+
 ## Requirements Met
 
 #### Use the images in the assets folder to design your react app exactly the same
