@@ -1,68 +1,48 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Design Match
 
-## Available Scripts
+By [Justin Shaw](mailto:easyworkemail@gmail.com)
 
-In the project directory, you can run:
+[github.com/justineshaw](https://github.com/justineshaw)
 
-### `npm start`
+## Instructions
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Navigate to [repo](https://github.com/justineshaw/notes-app)
+2. Clone locally using
+   `git clone https://github.com/justineshaw/notes-app.git`
+3. Install dependencies by using `npm install` in both the `client` and `backend` directories
+4. Run tests using `jest` in `backend` directory
+5. Start app front-end using `npm start` in `client` directory
+6. Start the server using `npm start` in `backend` directory
+7. Navigate to app in [browser](http://localhost:3000/)
+8. Have fun!
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Discussion
 
-### `npm test`
+I used the following technologies: HTML, CSS, React, Axios, Jest, 
+Express, Express Validator and Lowdb.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I used [create-react-app](https://github.com/facebook/create-react-app) 
+to generate the scaffolding for the app front-end.
 
-### `npm run build`
+I used [express-generator](https://www.npmjs.com/package/express) 
+to generate the scaffolding for this server.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Requirements Met
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+#### Build a notes app to display a list of notes using a frontend framework, a service, and persistence.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I used `React`, `Express`, and `Lowdb` to create an app that displays a list of notes that are persisted from a database. The app also offers immediate feedback to users so they know a new note was successfully added to the database.
 
-### `npm run eject`
+#### Notes should be persisted and retrieved via a service, where the user can (1) add a note (2) edit a note and (3) access a note directly via a url.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I built an API that has `GET`, `POST`, and `PUT` endpoints so the `React` frontend can access endpoints exposed by the server and access particular data in the database.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Stretch Goals!
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Include Input Validation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I used `Express Validator` to perform server-side Input Validation. For example, the user is prevented from entering an empty string/note. Also, if a user enters an invalid note index, they are notified.
 
-## Learn More
+#### Include Unit Testing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+I used `Jest` to create 4 unit tests to ensure that an HTTP request to the API yields the expected response.
